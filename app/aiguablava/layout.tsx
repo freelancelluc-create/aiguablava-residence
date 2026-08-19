@@ -50,21 +50,26 @@ export default function AiguablavaLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      style={{ colorScheme: "light" }}
-      suppressHydrationWarning
+    <div
+      className={`${cormorantGaramond.variable} ${dmSans.variable} ar-root`}
+      style={{
+        fontFamily: "var(--font-dm), system-ui, sans-serif",
+        minHeight: "100vh",
+      }}
     >
-      <body
-        className={`${cormorantGaramond.variable} ${dmSans.variable} antialiased`}
-        style={{
-          backgroundColor: "#F4F1EA",
-          color: "#171717",
-          fontFamily: "var(--font-dm), system-ui, sans-serif",
-        }}
-      >
-        {children}
-      </body>
-    </html>
+      <style>{`
+        /* Override root dark layout for Aiguablava route */
+        .ar-root,
+        .ar-root * {
+          --background: #F4F1EA;
+          --foreground: #171717;
+        }
+        body:has(.ar-root) {
+          background-color: #F4F1EA !important;
+          color: #171717;
+        }
+      `}</style>
+      {children}
+    </div>
   );
 }

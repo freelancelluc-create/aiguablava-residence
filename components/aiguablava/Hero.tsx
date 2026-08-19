@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
@@ -191,7 +191,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <button
-        ref={scrollRef as React.RefObject<HTMLButtonElement>}
+        ref={scrollRef}
         onClick={scrollDown}
         aria-label="Scroll to explore the residence"
         className="absolute bottom-8 right-8 md:right-12 flex flex-col items-center gap-2 cursor-pointer border-0 bg-transparent"
