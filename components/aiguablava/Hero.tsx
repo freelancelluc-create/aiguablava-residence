@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { withBase } from "@/lib/basePath";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -32,7 +33,7 @@ export default function Hero() {
         }}
       >
         <Image
-          src="/aiguablava/hero.png"
+          src={withBase("/aiguablava/hero.png")}
           alt="Aiguablava Residence — luxury Mediterranean villa with sea views, Begur, Costa Brava"
           fill
           priority

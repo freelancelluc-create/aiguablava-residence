@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { withBase } from "@/lib/basePath";
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -48,7 +49,7 @@ export default function Location() {
           }}
         >
           <Image
-            src="/aiguablava/coastline.png"
+            src={withBase("/aiguablava/coastline.png")}
             alt="Cala Aiguablava bay — secluded turquoise cove surrounded by pine-covered hills on the Costa Brava"
             fill
             className="object-cover object-center"

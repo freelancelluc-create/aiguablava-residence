@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { withBase } from "@/lib/basePath";
 
 function useInView(threshold = 0.08) {
   const ref = useRef<HTMLDivElement>(null);
@@ -40,7 +41,7 @@ export default function CoastaBravaStory() {
           >
             <div className="relative" style={{ aspectRatio: "3/4" }}>
               <Image
-                src="/aiguablava/location.png"
+                src={withBase("/aiguablava/location.png")}
                 alt="Begur medieval village on Costa Brava — stone castle and whitewashed houses above Mediterranean forest"
                 fill
                 className="object-cover"

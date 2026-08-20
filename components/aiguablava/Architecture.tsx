@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { withBase } from "@/lib/basePath";
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -73,7 +74,7 @@ export default function Architecture() {
           >
             <div className="relative" style={{ aspectRatio: "16/11" }}>
               <Image
-                src="/aiguablava/interior.png"
+                src={withBase("/aiguablava/interior.png")}
                 alt="Interior living space of Aiguablava Residence — open plan with floor-to-ceiling windows and sea view"
                 fill
                 className="object-cover"

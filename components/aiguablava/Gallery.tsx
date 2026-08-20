@@ -2,16 +2,17 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { withBase } from "@/lib/basePath";
 
 const galleryImages = [
-  { src: "/aiguablava/hero.png", alt: "Aiguablava Residence exterior — villa perched above Mediterranean sea", caption: "The Residence" },
-  { src: "/aiguablava/pool.png", alt: "Infinity pool with turquoise Mediterranean sea view", caption: "The Pool" },
-  { src: "/aiguablava/interior.png", alt: "Open-plan interior living space with sea views", caption: "Living Space" },
-  { src: "/aiguablava/terrace.png", alt: "Shaded terrace with outdoor dining table and sea view", caption: "The Terrace" },
-  { src: "/aiguablava/architecture.png", alt: "Architectural exterior facade — clean contemporary Mediterranean design", caption: "Architecture" },
-  { src: "/aiguablava/garden.png", alt: "Private garden at dusk with illuminated villa and olive trees", caption: "The Garden" },
-  { src: "/aiguablava/coastline.png", alt: "Cala Aiguablava bay — turquoise cove surrounded by pine forests", caption: "Aiguablava Bay" },
-  { src: "/aiguablava/location.png", alt: "Begur hilltop village on Costa Brava with sea views", caption: "Begur" },
+  { src: withBase("/aiguablava/hero.png"), alt: "Aiguablava Residence exterior — villa perched above Mediterranean sea", caption: "The Residence" },
+  { src: withBase("/aiguablava/pool.png"), alt: "Infinity pool with turquoise Mediterranean sea view", caption: "The Pool" },
+  { src: withBase("/aiguablava/interior.png"), alt: "Open-plan interior living space with sea views", caption: "Living Space" },
+  { src: withBase("/aiguablava/terrace.png"), alt: "Shaded terrace with outdoor dining table and sea view", caption: "The Terrace" },
+  { src: withBase("/aiguablava/architecture.png"), alt: "Architectural exterior facade — clean contemporary Mediterranean design", caption: "Architecture" },
+  { src: withBase("/aiguablava/garden.png"), alt: "Private garden at dusk with illuminated villa and olive trees", caption: "The Garden" },
+  { src: withBase("/aiguablava/coastline.png"), alt: "Cala Aiguablava bay — turquoise cove surrounded by pine forests", caption: "Aiguablava Bay" },
+  { src: withBase("/aiguablava/location.png"), alt: "Begur hilltop village on Costa Brava with sea views", caption: "Begur" },
 ];
 
 function useInView(threshold = 0.05) {

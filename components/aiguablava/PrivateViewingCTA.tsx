@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { withBase } from "@/lib/basePath";
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,7 +31,7 @@ export default function PrivateViewingCTA() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/aiguablava/pool.png"
+          src={withBase("/aiguablava/pool.png")}
           alt="Infinity pool at Aiguablava Residence — private viewing CTA background"
           fill
           className="object-cover"

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { withBase } from "@/lib/basePath";
 
 function useInView(threshold = 0.08) {
   const ref = useRef<HTMLDivElement>(null);
@@ -19,19 +20,19 @@ function useInView(threshold = 0.08) {
 
 const images = [
   {
-    src: "/aiguablava/pool.png",
+    src: withBase("/aiguablava/pool.png"),
     alt: "Infinity pool at Aiguablava Residence with Mediterranean sea view",
     caption: "The pool",
     aspect: "portrait" as const,
   },
   {
-    src: "/aiguablava/terrace.png",
+    src: withBase("/aiguablava/terrace.png"),
     alt: "Shaded terrace with outdoor dining and sea views",
     caption: "Outdoor living",
     aspect: "landscape" as const,
   },
   {
-    src: "/aiguablava/garden.png",
+    src: withBase("/aiguablava/garden.png"),
     alt: "Private garden at dusk with olive trees and villa illuminated",
     caption: "The garden",
     aspect: "landscape" as const,

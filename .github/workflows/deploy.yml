@@ -38,9 +38,7 @@ jobs:
       - name: Build static export
         run: npm run build
         env:
-          # Si tu repo NO es usuario.github.io (es un repo normal),
-          # descomenta y ajusta la línea siguiente con el nombre de tu repo:
-          # NEXT_PUBLIC_BASE_PATH: /nombre-de-tu-repo
+          NEXT_PUBLIC_BASE_PATH: /aiguablava-residence
           NODE_ENV: production
 
       # GitHub Pages ignora carpetas que empiezan por _ (como _next/)
